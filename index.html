@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+
+  <!-- Optional theme -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
+
+  <link rel="stylesheet" href="main.css">
+
+</head>
+
+<body>
+
+  <div class="container">
+    <div class="jumbotron">
+    </div>
+    <div class="row">
+      <div class="col-sm-6"><h3>how much cash do you want?</h3>
+      </div>
+      <div class="col-sm-6 text-right">
+        <div class="input-border">
+          &pound;
+          <input type="number" min="50" step="1" max=400 name="borrowing" onchange="setBorrowing(this.value)"/>
+        </div>
+      </div>
+    </div>
+    <div class="row row-buffer">
+      <div class="col-xs-1 text-center">
+        <span id="decBorrowing" class="glyphicon glyphicon-minus-sign"/>
+      </div>
+      <div class="col-sm-10">
+        <input type="range" name="borrowing" min="50" max="400" oninput="setBorrowing(this.value)"/>
+      </div>
+      <div class="col-xs-1 text-center">
+        <span id="incBorrowing" class="glyphicon glyphicon-plus-sign"/>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-6"><h3>how long do you want it for?</h3>
+      </div>
+      <div class="col-sm-6 text-right">
+        (Repayment date: <span id="repaymentDate"></span>)
+        <div class="input-border">
+          <input type="number" min="1" step="1" max=30 name="duration" onchange="setDuration(this.value)"/>
+          days
+        </div>
+      </div>
+    </div>
+    <div class="row row-buffer">
+      <div class="col-xs-1 text-center">
+        <span id="decDuration" class="glyphicon glyphicon-minus-sign"/>
+      </div>
+      <div class="col-sm-10">
+        <input type="range" name="duration" min="1" max="30" oninput="setDuration(this.value)"/>
+      </div>
+      <div class="col-xs-1 text-center">
+        <span id="incDuration" class="glyphicon glyphicon-plus-sign"/>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-8">
+        <div class="row">
+          <div class="col-xs-2">
+            Borrowing<br>
+            &pound;
+            <span name="borrowing"></span>
+          </div>
+          <div class="col-xs-1">
+            <span class="operator plus">+</span>
+          </div>
+          <div class="col-xs-2">
+            Interest<br>
+            &pound;
+            <span id="interest"></span>
+          </div>
+          <div class="col-xs-1">
+            <span class="operator equals">=</span>
+          </div>
+          <div class="col-sm-6">
+            Total to repay<br>
+            &pound;
+            <span id="total"></span>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-4 text-right">
+        <button type="button" class="btn btn-danger">Apply now</button>
+      </div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+
+    <script src="utility.js"></script>
+    <script src="main.js"></script>
+
+  </body>
