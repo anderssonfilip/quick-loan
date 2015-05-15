@@ -65,31 +65,39 @@ $(document).ready(function(){
   $('#total').text(interestAndRepay[1]);;
 
   $('#decBorrowing').click(function() {
-
     var borrowing = parseInt($('span[name=borrowing]').text()) - 1;
-
     setBorrowing(borrowing);
   });
 
   $('#incBorrowing').click(function() {
-
     var borrowing = parseInt($('span[name=borrowing]').text()) + 1;
-
     setBorrowing(borrowing);
   });
 
   $('#decDuration').click(function() {
-
     var duration = parseInt($('input[name=duration]').val()) - 1;
-
     setDuration(duration);
   });
 
   $('#incDuration').click(function() {
-
     var duration = parseInt($('input[name=duration]').val()) + 1;
-
     setDuration(duration);
+  });
+
+  $('input[name=borrowing][type=number]').on('change', function(){
+    setBorrowing(this.value)
+  });
+
+  $('input[name=borrowing][type=range]').on('input', function(){
+    setBorrowing(this.value)
+  });
+
+  $('input[name=duration][type=number]').on('change', function(){
+    setDuration(this.value)
+  });
+
+  $('input[name=duration][type=range]').on('input', function(){
+    setDuration(this.value)
   });
 
 });
